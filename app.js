@@ -10,7 +10,7 @@ var passport = require('passport');
 
 var config = require('./config/database');
 
-mongoose.connect(config.database);
+mongoose.connect(process.env.MONGODB_URI | config.database);
 
 var api = require('./routes/api');
 

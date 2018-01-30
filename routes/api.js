@@ -14,7 +14,7 @@ var Company = require("../models/company");
 
 var ObjectId = require('mongoose').Types.ObjectId; 
 
-var db = mongoose.connection.db;
+var db = process.env.MONGODB_URI | mongoose.connection.db;
 var mongoDriver = mongoose.mongo;
 var gfs = new Gridfs(db, mongoDriver);
 
